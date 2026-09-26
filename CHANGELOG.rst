@@ -2,6 +2,16 @@
 Changelog
 =========
 
+4.0
+===
+
+* Add support for Oscar 4.2, Django 5.2 and Python 3.12 - 3.14.
+* Drop support for Oscar < 4.2, Django < 5.2 and Python < 3.12.
+* Replace ``default_app_config`` (removed in Django 4.1) with ``AppConfig.default``.
+* Set ``default_auto_field`` to ``AutoField`` to match the existing migrations.
+* Add the ``code`` field Oscar's ``AbstractAddress`` gained to ``StoreAddress``.
+* Fix creating stores with opening hours, which queried the opening periods of the unsaved store.
+
 3.0.2
 =====
 

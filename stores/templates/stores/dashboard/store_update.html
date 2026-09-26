@@ -27,7 +27,7 @@
 </div>
 {% endif %}
 
-<form method="post" class="form-vertical wysiwyg" enctype="multipart/form-data">
+<form method="post" class="form-vertical wysiwyg" enctype="multipart/form-data" id="store_form">
     {% csrf_token %}
     {% if form.non_field_errors %}
         {% for error in form.non_field_errors %}

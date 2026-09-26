@@ -20,6 +20,7 @@ DATABASES = {
 }
 
 SITE_ID = 1
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 MEDIA_ROOT = location('public/media')
 MEDIA_URL = '/media/'

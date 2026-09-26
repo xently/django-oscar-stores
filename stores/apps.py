@@ -12,6 +12,10 @@ class StoresConfig(OscarConfig):
     verbose_name = _('Stores')
 
     namespace = 'stores'
+    # apps.py also imports OscarConfig, so mark this as the config used for 'stores' in INSTALLED_APPS
+    default = True
+    # Matches the primary keys of the existing migrations
+    default_auto_field = 'django.db.models.AutoField'
 
     def ready(self):
         self.list_view = get_class('stores.views', 'StoreListView')
