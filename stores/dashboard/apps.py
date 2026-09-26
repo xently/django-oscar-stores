@@ -9,6 +9,8 @@ class StoresDashboardConfig(OscarDashboardConfig):
     label = 'stores_dashboard'
 
     namespace = 'stores-dashboard'
+    # apps.py also imports OscarDashboardConfig, so mark this as the config used for 'stores.dashboard'
+    default = True
 
     default_permissions = ['is_staff']
 

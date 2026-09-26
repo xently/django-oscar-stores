@@ -80,7 +80,7 @@ class TestASignedInUser(StoresWebTest):
     def test_can_create_a_new_store_without_opening_periods(self):
         url = reverse('stores-dashboard:store-create')
         page = self.get(url)
-        create_form = page.form
+        create_form = page.forms["store_form"]
 
         create_form['name'] = 'Sample Store'
         create_form['address-0-line1'] = '123 Invisible Street'
@@ -122,7 +122,7 @@ class TestASignedInUser(StoresWebTest):
     def test_workinghours_form(self):
         url = reverse('stores-dashboard:store-create')
         page = self.get(url)
-        form = page.form
+        form = page.forms["store_form"]
 
         form['name'] = 'WorkingHoursTest'
         form['location'] = '{"type": "Point", "coordinates": [88.39,11.02]}'

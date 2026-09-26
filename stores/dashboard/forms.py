@@ -127,7 +127,8 @@ class OpeningPeriodFormset(BaseOpeningPeriodFormset):
 
     def __init__(self, weekday, data, instance=None):
         self.weekday = weekday
-        if instance:
+        # An unsaved store has no opening periods (Django >= 4.1 forbids querying its relations)
+        if instance and instance.pk:
             queryset = instance.opening_periods.all().filter(weekday=weekday)
         else:
             queryset = OpeningPeriod.objects.none()
